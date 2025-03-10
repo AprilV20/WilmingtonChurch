@@ -1,0 +1,568 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to bottom, #fdf8f9, #eaf4ff);
+    /* background: linear-gradient(to bottom, #f8f9fa, #dbeafe); */
+
+    color: black;
+    overflow-x: hidden;
+    line-height: 1.6;
+}
+
+
+#nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #5b081d;
+    padding: 0.5rem 4%;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    height: 5rem;
+}
+
+/* Logo & Church Name Container */
+#nav-brand {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;  /* Space between logo and text */
+}
+
+/* Smaller Logo */
+#nav-brand img {
+    width: 4rem; /* Adjusted to fit better */
+    height: auto;
+}
+
+/* Church Name Styling */
+#nav-text {
+    font-size: 2rem; /* Adjusted to fit navbar */
+    /* font-weight: bold; */
+    font-family: "roboto";
+ 
+    color: rgb(0, 15, 57);
+    white-space: nowrap; /* Prevents text from breaking */
+    display: flex;
+    align-items: center;
+
+    
+    /* Text Shadow (Fallback for Other Browsers) */
+    text-shadow: 1px 1px 18px #FFD700;
+}
+
+/* Nav Links */
+#nav-list {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+    padding: 0;
+    margin: 0;
+}
+
+#nav-list li a {
+    color: rgb(211, 151, 0);
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-family: 'roboto';
+    /* font-weight: bold; */
+    transition: color 0.3s ease;
+    /* text-shadow: 1px 1px 18px #fefefe; */
+
+}
+
+#nav-list li a:hover,
+#nav-list li a:focus {
+    color: white;
+}
+/* Hero Section */
+#hero {
+    position: relative;
+    height: 75vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    padding: 2rem;
+    margin-top: 4rem;
+    overflow: hidden;
+}
+
+/* Slideshow Container */
+#slideshow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+/* Slide Settings */
+.slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Elegant Text Placement */
+.slide-text {
+    position: absolute;
+    top: 55%;  /* Slightly lower for a sophisticated balance */
+    left: 6%;
+    transform: translateY(-50%);
+    color: white;
+    font-family: "Georgia", serif;  /* Elegant serif font */
+    text-align: left;
+    max-width: 45%;
+}
+
+/* Elegant Heading */
+.slide-text h1 {
+    font-size: 2rem;  /* Large but not overpowering */
+    font-weight: normal;
+    margin-bottom: 0.5rem;
+}
+
+/* Text Content */
+.slide-text p {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.5px;
+}
+
+/* Subtle Text Shadow for Readability */
+.slide-text h1, .slide-text p {
+    text-shadow: 1px 1px 10px rgba(0, 0, 0, 0.3);
+}
+
+
+/* Slideshow Animation */
+@keyframes slideShow {
+    10% { opacity: 1; }  /*slide visbilble*/
+    25% { opacity: 1; }  /*slide visbilble for 8 seconds*/
+    30% { opacity: 0; } /*start fading out*/
+    100% { opacity: 0; } /*fully faded out*/
+}
+
+.slide:nth-child(1) { animation: slideShow 32s infinite; }
+.slide:nth-child(2) { animation: slideShow 32s infinite 8s; }
+.slide:nth-child(3) { animation: slideShow 32s infinite 16s; }
+.slide:nth-child(4) { animation: slideShow 32s infinite 24s; }
+
+/* Hero Content */
+#hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+}
+
+#hero-content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+
+#hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+}
+/* Buttons */
+.buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+/* welcome section */
+/* Welcome Section Container */
+#welcome-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #022242; /* Soft background color */
+    padding: 3rem 5%;
+    border-radius: 10px; /* Rounded corners for a modern look */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    max-width: 90%;
+    margin: 2rem auto;
+}
+
+/* Welcome Text */
+#welcome-text {
+    flex: 1;
+    max-width: 55%;
+}
+
+#welcome-text h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #ffffff; /* Deep blue for contrast */
+    margin-bottom: 1rem;
+}
+
+#welcome-text p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #ffffff;
+    margin-bottom: 1rem;
+}
+
+/* Welcome List */
+#welcome-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+#welcome-list li {
+    font-size: 1.1rem;
+    color: #444;
+    padding-left: 1.5rem;
+    position: relative;
+    margin-bottom: 0.75rem;
+}
+
+/* Custom Bullet Points */
+#welcome-list li::before {
+    content: "•";
+    color: #FFD700; /* Gold bullet points */
+    font-size: 1.5rem;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+/* Learn More Button */
+#welcome-button {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    background: #1E3A8A; /* Deep blue button */
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+#welcome-button:hover {
+    background: #14274E; /* Darker blue on hover */
+    transform: scale(1.05);
+}
+
+/* Welcome Image */
+#welcome-image {
+    flex: 1;
+    max-width: 40%;
+    text-align: right;
+}
+
+#welcome-image img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+
+.button {
+    background-color: rgb(4, 28, 97);
+    color: white;
+    padding: 0.75rem 1.5rem;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    display: inline-block;
+}
+
+.button:hover,
+.button:focus {
+    background-color: rgb(4, 28, 97);
+    transform: scale(1.05);
+}
+
+/* Sections */
+section {
+    padding: 4rem 5%;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #5b081d;
+}
+
+/* Values Section */
+#values {
+    background: #a7682a; /* Dark background color */
+    
+    padding: 3rem 5%;
+    border-radius: 15px; /* Rounded corners for a soft look */
+    max-width: 90%;
+    margin: 4rem auto;
+    text-align: center;
+}
+
+/* Section Title */
+#values-title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 2rem;
+}
+
+/* Value Grid */
+#values-grid {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+/* Individual Value Box */
+.value {
+    flex: 1;
+    background: transparent;
+    padding: 1rem;
+    max-width: 30%;
+    color: white;
+}
+
+/* Icons */
+.value-icon {
+    font-size: 2rem;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+/* Headings */
+.value h3 {
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+/* Paragraphs */
+.value p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+
+/* Sermon Section */
+#latest-sermon iframe {
+    max-width: 100%;
+    border-radius: 10px;
+    margin: 1rem 0;
+}
+
+/* Events Hero Section */
+#events-hero {
+    text-align: center;
+    background: white;
+    color: black;
+    padding: 3rem 5%;
+}
+
+#events-hero h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+#events-hero p {
+    font-size: 1.2rem;
+    margin-top: 0.5rem;
+}
+
+/* Events Container */
+#events-container {
+    max-width: 90%;
+    margin: 2rem auto;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+/* Individual Event */
+.event {
+    display: flex;
+    align-items: center;
+    background: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.event:hover {
+    transform: translateY(-5px);
+}
+
+/* Event Date Styling */
+.event-date {
+    background: #800020; /* Burgundy */
+    color: white;
+    padding: 1rem;
+    border-radius: 8px;
+    text-align: center;
+    margin-right: 1.5rem;
+    min-width: 80px;
+}
+
+.event-date .month {
+    display: block;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.event-date .day {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+/* Event Details */
+.event-details {
+    flex: 1;
+}
+
+.event-details h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.event-details p {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Event Button */
+.event-button {
+    display: inline-block;
+    padding: 0.6rem 1.2rem;
+    background: #1E3A8A; /* Deep blue */
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+
+.event-button:hover {
+    background: #14274E;
+}
+
+
+
+/* Footer */
+#footer {
+    background-color: #5b081d;
+    color: white;
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: 3rem;
+    
+}
+
+
+#footer a {
+    color: goldenrod;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+#footer a:hover,
+#footer a:focus {
+    color: white;
+}
+
+/* Scroll Animation */
+@media (prefers-reduced-motion: no-preference) {
+    section {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    #nav {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #nav-list {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
+
+    #hero-content h1 {
+        font-size: 2rem;
+    }
+
+    .button {
+        font-size: 0.9rem;
+        padding: 0.6rem 1.2rem;
+    }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 900px) {
+    #welcome-container {
+        flex-direction: column;
+        text-align: center;
+        padding: 2rem;
+    }
+    
+    #welcome-text, #welcome-image {
+        max-width: 100%;
+    }
+    
+    #welcome-image {
+        margin-top: 1.5rem;
+    }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 900px) {
+    #values-grid {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .value {
+        max-width: 100%;
+    }
+
+}   
+
+/* Responsive Adjustments */
+@media (max-width: 900px) {
+    .event {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .event-date {
+        margin: 0 auto 1rem auto;
+    }
+}
